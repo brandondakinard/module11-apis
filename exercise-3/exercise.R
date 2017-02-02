@@ -8,19 +8,19 @@ library(dplyr)
 
 # Make a variable base.url that has the same base url from the poke api documentation.
 # (Hint: visit http://pokeapi.co/ to find the base url)
-
+base.url <- GET("http://pokeapi.co/api/v2/")
 
 # Make a variable called movie that has the names of your favorite pokemon
 # be aware of casing! 
 # There are multiple ways to call the pokemon. What are the 2 ways you can call 
 # it with the Poke API? 
-
+pokemon <- GET("http://pokeapi.co/api/v2/pokemon/squirtle")
 
 # Make a variable called pokemon url that holds your favorite pokemon's url 
-
+pokemon.url <- content(pokemon, "text")
 
 # Use the GET function to call the url, store it in a variable called response
-
+response <- GET(pokemon.url)
 
 # Use the names function to learn more response. Print it out. It will return a list of ten 
 # names within the response object. You can think of the list names as column names. 
